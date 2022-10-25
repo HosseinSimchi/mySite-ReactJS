@@ -1,31 +1,50 @@
-import {AppBar,Container,Toolbar,Button, Box, Avatar,Stack  } from '@mui/material'
-
-
+import {AppBar,Box,Toolbar,Typography,Button, Avatar} from '@mui/material';
+import {Link} from 'react-router-dom'
 
 const Header = () => {
-    const pages = ['Home', 'Skills', 'Articles','Education','Contacts']
     return (
         <>
-            <AppBar position="static">
-                <Container maxWidth="xl" fixed>
-                    <Toolbar disableGutters>
-                        <Stack direction="row" spacing={2}>
-                            <Avatar alt="Hossein Simchi" sx={{ width: 56, height: 56 }} source="../../public/Img/PersonalImg.jpg" />
-                        </Stack>
-                        {pages.map(page => {
+            <Box sx={{ flexGrow: 1 }}>
+                <AppBar position="static">
+                    <Toolbar>
+                        <Avatar sx = {{width: 45, height: 45}} alt = "Hossein Simchi" src="/img/Logo.png" />
+                        <Typography variant="h6" component="div" sx={{ marginLeft : 3}}>
+                            Hossein Simchi
+                        </Typography>
 
-                            return (
-                            <>
-                                <Box sx={{marginLeft:13}}>
-                                <Button color="inherit">{page}</Button>
-                                </Box>
-                            </>
-                            )
-                        })}
-                            
+                        <Link to="/" style= {{textDecoration: 'none'}}>
+                            <Button sx = {{marginLeft:50}} color="secondary">
+                                    Home
+                            </Button>
+                        </Link>
+
+                        <Link to="/skills" style= {{textDecoration: 'none'}}> 
+                            <Button sx = {{marginLeft:5}} color="secondary">
+                                    Skills
+                            </Button>
+                        </Link>
+
+                        <Link to="/articles" style= {{textDecoration: 'none'}}>
+                            <Button sx = {{marginLeft:5}} color="secondary">
+                                    Articles
+                            </Button>
+                        </Link>
+
+                        <Link to="/education" style= {{textDecoration: 'none'}}>
+                            <Button sx = {{marginLeft:5}} color="secondary">
+                                    Education
+                            </Button>
+                        </Link>
+
+                        <Link to="/contact" style= {{textDecoration: 'none'}}>
+                            <Button sx = {{marginLeft:5}} color="secondary">
+                                    Contact
+                            </Button>
+                        </Link>
+
                     </Toolbar>
-                </Container>
-            </AppBar>
+                </AppBar>
+            </Box>
         </>
     )
 }

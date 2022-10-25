@@ -1,5 +1,4 @@
 /*
 TODO:
-    1)Complete Home.jsx
-
+    Complete Home Page (Design Card)
 */

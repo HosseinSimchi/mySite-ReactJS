@@ -1,9 +1,14 @@
-import {Container, Typography, Card,
-    CardContent ,CardActions ,Button} from '@mui/material';
+import {Container, Typography,} from '@mui/material';
 
-
+import Box from '@mui/material/Box';
+import Fab from '@mui/material/Fab';
+import AddIcon from '@mui/icons-material/Add';
+import EditIcon from '@mui/icons-material/Edit';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import NavigationIcon from '@mui/icons-material/Navigation';
 
 const Home = () => {
+
     return (
         <> 
             <img src="/img/bgImageHome.jpg" alt="Home Description" className='imgHomePage' />
@@ -13,7 +18,7 @@ const Home = () => {
                 </Typography>
             </Container>
             <Container  sx={{textAlign:'center'}} >
-                <Card sx={{ maxWidth:230, backgroundColor:'#6272a4', marginTop:3, textAlign:'center' }}>
+                {/* <Card sx={{ maxWidth:230, backgroundColor:'#6272a4', marginTop:3, textAlign:'center' }}>
                     <CardContent>
                         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                             Word of the Day
@@ -35,7 +40,22 @@ const Home = () => {
                         <Button variant='contained' size="small" sx={{backgroundColor:'#44475a', color:'#ff79c6'}}>Learn More</Button>
                     </CardActions>
 
-                </Card>
+                </Card> */}
+            <Box sx={{ '& > :not(style)': { m: 1 } }}>
+                <Fab color="primary" aria-label="add">
+                    <AddIcon />
+                </Fab>
+                <Fab color="secondary" aria-label="edit">
+                    <EditIcon />
+                </Fab>
+                <Fab variant="extended">
+                    <NavigationIcon sx={{ mr: 1 }} />
+                    Navigate
+                </Fab>
+                <Fab disabled aria-label="like">
+                    <FavoriteIcon />
+                </Fab>
+            </Box>
             </Container>
         </>
     )

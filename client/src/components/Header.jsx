@@ -1,4 +1,5 @@
 import {AppBar,Box,Toolbar,Typography,Button, Avatar} from '@mui/material';
+import { Stack } from '@mui/system';
 import {Link} from 'react-router-dom'
 
 const Header = () => {
@@ -12,35 +13,37 @@ const Header = () => {
                             Hossein Simchi
                         </Typography>
 
-                        <Link to="/" style= {{textDecoration: 'none'}}>
-                            <Button sx = {{marginLeft:50}} color="secondary">
-                                    Home
-                            </Button>
-                        </Link>
+                        <Stack direction="row" spacing={5} sx={{marginLeft:50}}>
+                            <Link to="/" style= {{textDecoration: 'none'}}>
+                                <Button color="secondary">
+                                        Home
+                                </Button>
+                            </Link>
 
-                        <Link to="/skills" style= {{textDecoration: 'none'}}> 
-                            <Button sx = {{marginLeft:5}} color="secondary">
-                                    Skills
-                            </Button>
-                        </Link>
+                            <Link to="/skills" style= {{textDecoration: 'none'}}> 
+                                <Button color="secondary">
+                                        Skills
+                                </Button>
+                            </Link>
 
-                        <Link to="/articles" style= {{textDecoration: 'none'}}>
-                            <Button sx = {{marginLeft:5}} color="secondary">
-                                    Articles
-                            </Button>
-                        </Link>
+                            <Link to="/articles" style= {{textDecoration: 'none'}}>
+                                <Button color="secondary">
+                                        Articles
+                                </Button>
+                            </Link>
 
-                        <Link to="/education" style= {{textDecoration: 'none'}}>
-                            <Button sx = {{marginLeft:5}} color="secondary">
-                                    Education
-                            </Button>
-                        </Link>
+                            <Link to="/education" style= {{textDecoration: 'none'}}>
+                                <Button color="secondary">
+                                        Education
+                                </Button>
+                            </Link>
 
-                        <Link to="/contact" style= {{textDecoration: 'none'}}>
-                            <Button sx = {{marginLeft:5}} color="secondary">
-                                    Contact
-                            </Button>
-                        </Link>
+                            <Link to="/contact" style= {{textDecoration: 'none'}}>
+                                <Button color="secondary">
+                                        Contact
+                                </Button>
+                            </Link>
+                        </Stack>
 
                     </Toolbar>
                 </AppBar>

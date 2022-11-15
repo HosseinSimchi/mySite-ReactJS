@@ -1,9 +1,10 @@
 import {useState} from 'react';
 import * as React from 'react'
 // import Component's API from Material UI ( MUI )
-import {TextField} from '@mui/material';
+import {TextField, Stack} from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+
 
 // To get the present time and use jalaliday
 import dayjs from 'dayjs';
@@ -36,7 +37,7 @@ class ExtendedDateFnsJalaliUtils extends DateFnsJalaliUtils {
 
 
 //Create datePicker Component
-const datePicker = () => {    
+const Home = () => {    
 
     //Variables
     const date = dayjs().calendar('jalali')
@@ -50,6 +51,7 @@ const datePicker = () => {
     //return functions 
     return (
         <LocalizationProvider dateAdapter={ExtendedDateFnsJalaliUtils}>
+            <Stack spacing ={3} sx={{m:50}}>
                 <DatePicker
                     label="تاریخ را وارد کنید"
                     value={value}
@@ -57,11 +59,19 @@ const datePicker = () => {
                     renderInput={(params) => {
                     return <TextField  {...params} />}}
                 />
+                <DatePicker
+                    views={['year']}
+                    label="سال"
+                    value={value}
+                    onChange={handleChange}
+                    renderInput={(params) => <TextField {...params} helperText={null} />}
+                />
+            </Stack>
         </LocalizationProvider>
 
     )
 }
 
-export default datePicker;
+export default Home;
 
 
